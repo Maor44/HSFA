@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>הראל שרעבי פרסטר עדיני - HSFA | משרד עורכי דין בתל אביב-יפו</title>
+
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Assistant:wght@400;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="./style.css">
+
+  <script>
+    function handleFirstTab(e) {
+      if (e.keyCode === 9) {
+        document.body.classList.add("user-is-tabbing");
+
+        window.removeEventListener("keydown", handleFirstTab);
+        window.addEventListener("mousedown", handleMouseDownOnce);
+      }
+    }
+
+    function handleMouseDownOnce() {
+      document.body.classList.remove("user-is-tabbing");
+
+      window.removeEventListener("mousedown", handleMouseDownOnce);
+      window.addEventListener("keydown", handleFirstTab);
+    }
+
+    window.addEventListener("keydown", handleFirstTab);
+  </script>
+
+</head>
+<body>
+  <h1 class="title">מלאו את הטופס ונחזור אליכם בהקדם</h1>
+  <form action="" class="form">
+    <input placeholder="שם" type="text" class="input">
+    <input placeholder="שם משפחה" type="text" class="input">
+    <input placeholder="טלפון" type="tel" class="input">
+    <input id="email" placeholder='דוא"ל' type="email" class="input" req>
+    <textarea placeholder="הודעה" class="input textarea" cols="30" rows="10"></textarea>
+  </form>
+  <button class="send-button">שליחה</button>
+  <p class="success">.תודה שפניתם</p>
+
+
+  <script src="./main.js"></script>
+</body>
+</html>
